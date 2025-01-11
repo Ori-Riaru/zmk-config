@@ -26,7 +26,7 @@
 
                 raise_layer {
                         bindings = <
-   &kp PRCNT &kp AT &kp DLLR &kp HASH  &kp AMPS   &kp PIPE    &kp CARET &kp N7 &ktp N8 &kp N9 &kp ASTRK &kp FSLH
+   &kp PRCNT &kp AT &kp DLLR &kp HASH  &kp AMPS   &kp PIPE    &kp CARET &kp N7 &kp N8 &kp N9 &kp ASTRK &kp FSLH
    &trans    &trans &kp LBKT &kp LPAR  &kp LBRC   &trans      &kp DOT   &kp N4 &kp N5 &kp N6 &kp PLUS  &kp MINUS
    &trans    &trans &kp RBKT &kp RPAR  &kp RBRC   &trans      &kp N0    &kp N1 &kp N2 &kp N3 &kp EQUAL &kp RET
                              &trans    &kp SPACE  &trans      &trans    &trans &trans
