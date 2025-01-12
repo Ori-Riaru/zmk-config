@@ -34,20 +34,20 @@
    &kp TAB   &kp SQT  &kp COMMA &kp DOT  &kp P     &kp Y     &kp F   &kp G    &kp C    &kp R &kp L &kp BSPC
    &kp LCTRL &kp A    &kp O     &kp E    &kp U     &kp I     &kp D   &kp H    &kp T    &kp N &kp S &kp MINUS
    &kp LSHFT &kp SEMI &kp Q     &kp J    &kp K     &kp X     &kp B   &kp M    &kp W    &kp V &kp Z &kp ESC
-                                &kp LGUI &kp SPACE &mo 4     &mo 3   &kp RET  &kp RALT
+                                &kp LGUI &kp SPACE &mo 3     &mo 2   &kp RET  &kp RALT
                         >;
                 };
                 menu_layer {
                          display_name = "MENU";
                         bindings = <
    &trans &trans          &trans       &trans       &trans       &trans       &trans   &trans   &trans    &trans    &trans    &trans
-   &trans &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans   &kp LEFT &kp UP    &kp DOWN  &kp RIGHT &trans
-   &trans &rgb_ug RGB_OFF &trans       &trans       &trans       &trans       &trans   &trans   &trans    &trans    &tog 3    &trans
-                                       &kp LGUI     &trans       &kp SPACE    &kp RET  &trans   &kp RALT
+   &trans &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans   &trans   &trans    &trans    &trans    &trans
+   &trans &rgb_ug RGB_OFF &trans       &trans       &trans       &trans       &trans   &trans   &trans    &trans    &tog 4    &trans
+                                       &trans       &trans       &trans       &trans   &trans   &trans
                         >;
                 };
                 nav_layer {
-                        display_name = "MENU";
+                        display_name = "NAV";
                         bindings = <
    &trans &trans &trans &trans &trans &trans &kp PG_UP &kp HOME &prev_word &next_word &kp END   &trans
    &trans &trans &trans &trans &trans &trans &kp PG_DN &kp LEFT &kp UP     &kp DOWN   &kp RIGHT &trans
@@ -67,7 +67,7 @@
                 gaming_layer {
                         display_name = "GAME";
                         bindings = <
-   &kp ESC   &kp TAB &kp Q    &kp W    &kp E      &kp R       &kp I    &kp J    &kp UP   &trans    &trans   &tog 3
+   &kp ESC   &kp TAB &kp Q    &kp W    &kp E      &kp R       &kp I    &kp J    &kp UP   &trans    &trans   &tog 4
    &kp LSHFT &kp G   &kp A    &kp S    &kp D      &kp F       &kp H    &kp LEFT &kp DOWN &kp RIGHT &trans   &trans
    &kp LCTRL &kp M   &kp Z    &kp X    &kp C      &kp V       &kp B    &trans   &trans   &trans    &kp T    &kp Y
                               &trans   &kp SPACE  &kp LALT    &kp RET  &trans   &trans
