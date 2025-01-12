@@ -29,16 +29,16 @@
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
-                        display_name = "BASE";
+                        display-name = "BASE";
                         bindings = <
    &kp TAB   &kp SQT  &kp COMMA &kp DOT  &kp P     &kp Y     &kp F   &kp G    &kp C    &kp R &kp L &kp BSPC
    &kp LCTRL &kp A    &kp O     &kp E    &kp U     &kp I     &kp D   &kp H    &kp T    &kp N &kp S &kp MINUS
    &kp LSHFT &kp SEMI &kp Q     &kp J    &kp K     &kp X     &kp B   &kp M    &kp W    &kp V &kp Z &kp ESC
-                                &kp LGUI &kp SPACE &mo 3     &mo 2   &kp RET  &kp RALT
+                                &kp LGUI &kp SPACE &mo 3     &mo 2   &kp RET  &mo 2
                         >;
                 };
                 menu_layer {
-                         display_name = "MENU";
+                        display-name = "MENU";
                         bindings = <
    &trans &trans          &trans       &trans       &trans       &trans       &trans   &trans   &trans    &trans    &trans    &trans
    &trans &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans   &trans   &trans    &trans    &trans    &trans
@@ -47,7 +47,7 @@
                         >;
                 };
                 nav_layer {
-                        display_name = "NAV";
+                        display-name = "NAV";
                         bindings = <
    &trans &trans &trans &trans &trans &trans &kp PG_UP &kp HOME &prev_word &next_word &kp END   &trans
    &trans &trans &trans &trans &trans &trans &kp PG_DN &kp LEFT &kp UP     &kp DOWN   &kp RIGHT &trans
@@ -56,7 +56,7 @@
                         >;
                 };
                 num_layer {
-                        display_name = "NUMS";
+                        display-name = "NUMS";
                         bindings = <
    &kp PRCNT &kp AT &kp DLLR &kp HASH  &kp AMPS   &kp PIPE    &kp CARET &kp N7 &kp N8 &kp N9 &kp ASTRK &kp FSLH
    &trans    &kp LT &kp LBKT &kp LPAR  &kp LBRC   &kp LT      &kp DOT   &kp N4 &kp N5 &kp N6 &kp PLUS  &kp MINUS
@@ -65,7 +65,7 @@
                         >;
                 };
                 gaming_layer {
-                        display_name = "GAME";
+                        display-name = "GAME";
                         bindings = <
    &kp ESC   &kp TAB &kp Q    &kp W    &kp E      &kp R       &kp I    &kp J    &kp UP   &trans    &trans   &tog 4
    &kp LSHFT &kp G   &kp A    &kp S    &kp D      &kp F       &kp H    &kp LEFT &kp DOWN &kp RIGHT &trans   &trans
