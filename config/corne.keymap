@@ -1,77 +1,95 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-        macros {
-                next_word: next_word {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings
-                        = <&macro_press &kp LCTRL>
-                        , <&macro_tap &kp RIGHT>
-                        , <&macro_release &kp LCTRL>
-                        ;
-                };
-
-                prev_word: prev_word {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings
-                        = <&macro_press &kp LCTRL>
-                        , <&macro_tap &kp LEFT>
-                        , <&macro_release &kp LCTRL>
-                        ;
-                };
-        }; 
-        
-        keymap {
-                compatible = "zmk,keymap";
-                default_layer {
-                        display-name = "BASE";
-                        bindings = <
-   &kp TAB   &kp SQT  &kp COMMA &kp DOT  &kp P     &kp Y     &kp F   &kp G    &kp C    &kp R &kp L &kp BSPC
-   &kp LCTRL &kp A    &kp O     &kp E    &kp U     &kp I     &kp D   &kp H    &kp T    &kp N &kp S &kp MINUS
-   &kp LSHFT &kp SEMI &kp Q     &kp J    &kp K     &kp X     &kp B   &kp M    &kp W    &kp V &kp Z &kp ESC
-                                &kp LGUI &kp SPACE &mo 3     &mo 2   &kp RET  &mo 2
-                        >;
-                };
-                menu_layer {
-                        display-name = "MENU";
-                        bindings = <
-   &trans &trans          &trans       &trans       &trans       &trans       &trans   &trans   &trans    &trans    &trans    &trans
-   &trans &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans   &trans   &trans    &trans    &trans    &trans
-   &trans &rgb_ug RGB_OFF &trans       &trans       &trans       &trans       &trans   &trans   &trans    &trans    &tog 4    &trans
-                                       &trans       &trans       &trans       &trans   &trans   &trans
-                        >;
-                };
-                nav_layer {
-                        display-name = "NAV";
-                        bindings = <
-   &trans &trans &trans &trans &trans &trans &kp PG_UP &kp HOME &prev_word &next_word &kp END   &trans
-   &trans &trans &trans &trans &trans &trans &kp PG_DN &kp LEFT &kp UP     &kp DOWN   &kp RIGHT &trans
-   &trans &trans &trans &trans &trans &trans &trans    &trans   &trans     &trans     &trans    &trans
-                        &trans &trans &trans &trans    &trans   &trans
-                        >;
-                };
-                num_layer {
-                        display-name = "NUMS";
-                        bindings = <
-   &kp PRCNT &kp AT &kp DLLR &kp HASH  &kp AMPS   &kp PIPE    &kp CARET &kp N7 &kp N8 &kp N9 &kp ASTRK &kp FSLH
-   &trans    &kp LT &kp LBKT &kp LPAR  &kp LBRC   &kp LT      &kp DOT   &kp N4 &kp N5 &kp N6 &kp PLUS  &kp MINUS
-   &trans    &kp GT &kp RBKT &kp RPAR  &kp RBRC   &kp GT      &kp N0    &kp N1 &kp N2 &kp N3 &kp EQUAL &kp RET
-                             &trans    &kp SPACE  &trans      &trans    &trans &trans
-                        >;
-                };
-                gaming_layer {
-                        display-name = "GAME";
-                        bindings = <
-   &kp ESC   &kp TAB &kp Q    &kp W    &kp E      &kp R       &kp I    &kp J    &kp UP   &trans    &trans   &tog 4
-   &kp LSHFT &kp G   &kp A    &kp S    &kp D      &kp F       &kp H    &kp LEFT &kp DOWN &kp RIGHT &trans   &trans
-   &kp LCTRL &kp M   &kp Z    &kp X    &kp C      &kp V       &kp B    &trans   &trans   &trans    &kp T    &kp Y
-                              &trans   &kp SPACE  &kp LALT    &kp RET  &trans   &trans
-                        >;
-                };
+    macros {
+        next_word: next_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
+
+        prev_word: prev_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LCTRL>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "BASE";
+            bindings = <
+&kp ESC  &kp SQT           &kp COMMA    &kp DOT         &kp P      &kp Y    &kp F  &kp G    &kp C       &kp R        &kp L         &kp BSPC
+&kp TAB  &mt LEFT_SHIFT A  &mt LCTRL O  &mt LEFT_ALT E  &kp U      &kp I    &kp D  &kp H    &mt RALT T  &mt RCTRL N  &mt RSHIFT S  &kp MINUS
+&trans   &kp SEMI          &kp Q        &kp J           &kp K      &kp X    &kp B  &kp M    &kp W       &kp V        &kp Z         &trans
+                                        &kp LGUI        &kp SPACE  &mo 3    &mo 2  &kp RET  &mo 2
+            >;
+        };
+
+        menu_layer {
+            display-name = "MENU";
+            bindings = <
+&bt BT_SEL 0  &trans           &trans  &trans  &trans  &trans    &trans  &trans          &trans           &trans             &trans      &trans
+&bt BT_SEL 1  &trans           &trans  &trans  &trans  &trans    &trans  &kp C_PREVIOUS  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_NEXT  &trans
+&bt BT_SEL 2  &rgb_ug RGB_OFF  &tog 4  &trans  &trans  &trans    &trans  &trans          &trans           &trans             &trans      &trans
+                                       &trans  &trans  &trans    &trans  &trans          &trans
+            >;
+        };
+
+        nav_layer {
+            display-name = "NAV";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp HOME    &prev_word  &next_word   &kp END    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp PG_DN  &kp LEFT    &kp UP      &kp DOWN     &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp K_COPY  &kp K_CUT   &kp K_PASTE  &trans     &trans
+                        &trans  &trans  &trans    &trans     &trans      &trans
+            >;
+        };
+
+        num_layer {
+            display-name = "NUMS";
+            bindings = <
+&kp PRCNT  &kp AT  &kp DLLR  &kp HASH  &kp AMPS   &kp PIPE         &kp CARET  &kp N7  &kp N8  &kp N9  &kp ASTRK  &kp FSLH
+&trans     &kp LT  &kp LBKT  &kp LPAR  &kp LBRC   &kp LT           &kp DOT    &kp N4  &kp N5  &kp N6  &kp PLUS   &kp MINUS
+&trans     &kp GT  &kp RBKT  &kp RPAR  &kp RBRC   &kp GT           &kp N0     &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp RET
+                             &trans    &kp SPACE  &kp BACKSPACE    &trans     &trans  &trans
+            >;
+        };
+
+        gaming_layer {
+            display-name = "GAME";
+            bindings = <
+&kp ESC    &kp TAB  &kp Q  &kp W   &kp E      &kp R       &kp I    &kp J     &kp UP    &trans     &trans  &tog 4
+&kp LSHFT  &kp G    &kp A  &kp S   &kp D      &kp F       &kp H    &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&kp LCTRL  &kp M    &kp Z  &kp X   &kp C      &kp V       &kp B    &trans    &trans    &trans     &kp T   &kp Y
+                           &trans  &kp SPACE  &kp LALT    &kp RET  &trans    &trans
+            >;
+        };
+
+        function_layer {
+            bindings = <
+&trans          &kp F1  &kp F2   &kp F3   &kp F4        &trans    &trans  &kp F13        &kp F14  &kp F15  &kp F16  &trans
+&kp LEFT_SHIFT  &kp F5  &kp F6   &kp F7   &kp F8        &trans    &trans  &kp F17        &kp F18  &kp F19  &kp F20  &kp RIGHT_SHIFT
+&kp LCTRL       &kp F9  &kp F10  &kp F11  &kp F12       &trans    &trans  &kp F21        &kp F22  &kp F23  &kp F24  &kp RCTRL
+                                 &trans   &kp LEFT_ALT  &trans    &trans  &kp RIGHT_ALT  &trans
+            >;
+        };
+    };
 };
