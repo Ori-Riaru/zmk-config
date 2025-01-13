@@ -30,16 +30,43 @@
         };
     };
 
+    behaviors {
+        lh_mt: lh_mt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LH_MT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+        };
+
+        rh_mt: rh_mt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RH_MT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            flavor = "tap-unless-interrupted";
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "BASE";
             bindings = <
-&kp ESC  &kp SQT           &kp COMMA    &kp DOT         &kp P      &kp Y    &kp F  &kp G    &kp C       &kp R        &kp L         &kp BSPC
-&kp TAB  &mt LEFT_SHIFT A  &mt LCTRL O  &mt LEFT_ALT E  &kp U      &kp I    &kp D  &kp H    &mt RALT T  &mt RCTRL N  &mt RSHIFT S  &kp MINUS
-&trans   &kp SEMI          &kp Q        &kp J           &kp K      &kp X    &kp B  &kp M    &kp W       &kp V        &kp Z         &trans
-                                        &kp LGUI        &kp SPACE  &mo 3    &mo 2  &kp RET  &mo 1
+&kp ESC  &kp SQT              &kp COMMA       &kp DOT            &kp P      &kp Y    &kp F  &kp G    &kp C          &kp R           &kp L            &kp BSPC
+&kp TAB  &lh_mt LEFT_SHIFT A  &lh_mt LCTRL O  &lh_mt LEFT_ALT E  &kp U      &kp I    &kp D  &kp H    &rh_mt RALT T  &rh_mt LCTRL N  &rh_mt LSHIFT S  &kp MINUS
+&trans   &kp SEMI             &kp Q           &kp J              &kp K      &kp X    &kp B  &kp M    &kp W          &kp V           &kp Z            &trans
+                                              &kp LGUI           &kp SPACE  &mo 3    &mo 2  &kp RET  &mo 1
             >;
         };
 
