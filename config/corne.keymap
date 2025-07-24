@@ -287,7 +287,7 @@
                 &kp ESC     &kp SQT     &kp MINUS   &kp DOT     &kp P       &kp Y       &kp F       &kp G       &kp C       &kp R       &kp L       &kp ESC
                 &kp ESC     &hm LGUI A  &hm LALT O  &hm LSHFT E &hm LCTRL U &kp I       &kp D       &hm RCTRL H &hm RSHFT T &hm RALT N  &hm RGUI S  &kp ESC
                 &kp ESC     &kp SEMI    &kp Q       &kp J       &kp K       &kp X       &kp B       &kp M       &kp W       &kp V       &kp Z       &kp ESC
-                                                    &lt_esc 1 ESC &lt_spc 2 SPACE &kp ESC &kp ESC &kp BtSPC &lt_ret 3 RET
+                                                    &lt_esc 1 ESC &lt_spc 2 SPACE &kp ESC &kp ESC &kp BSPC &lt_ret 3 RET
             >;
         };
 
